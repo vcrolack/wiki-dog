@@ -1,0 +1,30 @@
+{
+  "name": "wikidog",
+  "version": "1.0.0",
+  "description": "Webpage que realiza consultas a API y muestra la información obtenida.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src",
+    "dev": "nodemon src localhost 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vcrolack/wiki-dog.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "Victor Rolack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vcrolack/wiki-dog/issues"
+  },
+  "homepage": "https://github.com/vcrolack/wiki-dog#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "pug": "^3.0.2"
+  }
+}
