@@ -1,0 +1,15 @@
+mixin banner(imagen)
+  div(class="carousel-item"): img(src="images/" + imagen class="d-block w-100")
+
+mixin team(titulo, imagen)
+  div(class="col col-md-4")
+    div(class="card")
+      div(class="card-header text-center") #{titulo}
+      div(class="card-body")
+        div(class="container img-container")
+          img(src="/images/" + imagen)
+        div(class="container mt-5")
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, 
+          | officia, temporibus pariatur sint ab ad quas vel laudantium consequuntur error, 
+          | quo accusamus voluptas minus consectetur libero in ut sit 
+          | atque.
