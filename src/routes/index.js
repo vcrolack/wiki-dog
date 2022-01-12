@@ -22,9 +22,11 @@ router.get('/perros', (req, res) => {
 router.get('/perro/:race', (req, res) => {
   const race = req.params.race;
   const urlAPI = `https://dog.ceo/api/breed/${race}/images/random`;
-  axios.get(urlApi)
+  axios.get(urlAPI)
   .then(function (response) {
     console.log(response);
+    //maquetar dog.pug
+    res.render('dog')
   })
 })
 

@@ -10,7 +10,7 @@ block content-main
             ul
               each dog in dogs
                 li(class="mt-2")
-                  a(class="dog-url" hrf='/perro/' + dog)= dog
+                  a(class="dog-url" href='/perro/' + dog)= dog
           else
             h2(class="text-center bg-warning p-2") Estamos experimentando problemas internos. Recarga la página o regresa más tarde.
             div(class="container-img"): img(src="images/what.png")
