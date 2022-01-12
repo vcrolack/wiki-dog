@@ -1,0 +1,11 @@
+extends components/layout.pug
+block content-main
+  div(class="card text-center")
+    div(class="card-header")
+      h2= race
+    div(class="card-body d-flex  flex-column align-items-center")
+      h5(class="card-title mb-5") Un #{race} luce así:
+      div(class="container-img "): img(src=img class="animated animatedFadeInUp fadeInUp")
+      a(class="btn btn-primary my-5" href="/perros") Regresar
+      
+
