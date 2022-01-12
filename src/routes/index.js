@@ -17,8 +17,16 @@ router.get('/perros', (req, res) => {
     let only_dogs = Object.keys(all_dogs);
     res.render('all_dogs', {'perros': true, 'dogs': only_dogs})
   })
-
 });
+
+router.get('/perro/:race', (req, res) => {
+  const race = req.params.race;
+  const urlAPI = `https://dog.ceo/api/breed/${race}/images/random`;
+  axios.get(urlApi)
+  .then(function (response) {
+    console.log(response);
+  })
+})
 
 module.exports = router;
 
