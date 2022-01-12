@@ -1,2 +1,16 @@
 extends components/layout.pug
 block content-main
+  div(class="container text-center")
+    section(id="perros")
+      h1 Listado de razas y subrazas encontradas en la BD
+      div(class="container container-list")
+        div(class="row mt-5 animated animatedFadeInUp fadeInUp")
+          if dogs
+            ul
+              each dog in dogs
+                li(class="mt-2")
+                  a(class="dog-url")= dog
+          else
+            h2(class="text-center bg-warning p-2") Estamos experimentando problemas internos. Recarga la página o regresa más tarde.
+            div(class="container-img"): img(src="images/what.png")
+        
