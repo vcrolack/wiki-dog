@@ -1,9 +1,23 @@
 extends components/layout.pug
 block content-main
   div(class="container text-center")
-    section(id="perros")
+    section(id="perros" class="row")
       h1 Listado de razas y subrazas encontradas en la BD
-      div(class="container container-list")
+      div(class="container container-options mt-5")
+        div(class="card py-5 bg-dark text-white")
+          h2(class="mb-5") Filtros
+          div(class="container-filters d-flex justify-content-center")
+            div(class="container-buttons")
+              button(type="button", class="btn btn-primary me-3", onclick="testFunc()") Orden asc
+              button(type="button", class="btn btn-primary me-3", onclick="testFunc()") Orden desc
+            div(class="container-combox")
+              select(class="dropdown")
+                button(class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Filtrar
+                div(class="dropdown-menu" aria-labelledby="dropdownMenuButton")
+                  option(class="dropdown-item" href="#") Razas
+                  option(class="dropdown-item" href="#") Subrazas
+                  option(class="dropdown-item" href="#") Razas que poseen subrazas
+              button(class="btn btn-secondary ms-2") Buscar
         div(class="row mt-5 animated animatedFadeInUp fadeInUp")
           if dogs
             h2(class="mb-5") Listado de razas
@@ -19,10 +33,11 @@ block content-main
           if dogs
             h2(class="mb-5") Listado de sub razas
             ul
-              each race in races
-                if race.length > 0
+              each subrace in subraces
+                if subrace.length > 0
                   li(class="mt-2")
-                    a(class="dog-url" href='/perro/' + dog)= race
+                    a(class="dog-url" href='/subperro/hound/' + subrace)= subrace
           else
             h2(class="text-center bg-warning p-2") Estamos experimentando problemas internos. Recarga la página o regresa más tarde.
             div(class="container-img"): img(src="images/what.png")
+  //- include components/sub_race_component.pug

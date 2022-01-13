@@ -60,3 +60,19 @@ ul {
   animation-name: fadeInUp;
   -webkit-animation-name: fadeInUp;
 }
+
+@media (max-width: 350px) {
+  ul {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+  }
+}
+
+@media (max-width: 750px) {
+  ul {
+    columns: 2;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+  }
+}

@@ -14,8 +14,24 @@ mixin team(titulo, imagen)
           | quo accusamus voluptas minus consectetur libero in ut sit 
           | atque
 
-mixin dog()
-  div(class="col-12 col-md-3")
-          div(class="card mb-5")
-            div(class="card-header")
-            div(class="card-body")
+mixin card_dog(subrace, img)
+  div(class="card text-center")
+    div(class="card-header")
+      h2= race
+    div(class="card-body d-flex  flex-column align-items-center")
+      h5(class="card-title mb-5") Un #{race} luce así:
+      div(class="container-img "): img(src=img class="animated animatedFadeInUp fadeInUp")
+      a(class="btn btn-primary my-5" href="/perros") Regresar
+
+mixin dog_list(dogs)
+  div(class="container container-list")
+  div(class="row mt-5 animated animatedFadeInUp fadeInUp")
+    if dogs
+      h2(class="mb-5") Listado de razas
+      ul
+        each dog in dogs
+          li(class="mt-2")
+            a(class="dog-url" href='/perro/' + dog)= dog
+    else
+      h2(class="text-center bg-warning p-2") Estamos experimentando problemas internos. Recarga la página o regresa más tarde.
+      div(class="container-img"): img(src="images/what.png")
